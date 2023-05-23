@@ -111,13 +111,13 @@ header>.container .nav-mobile {
     display: none;
 }
 
-@media (max-width: 767px) {
-    header .container nav {
+@media (max-width: 991px) {
+    /* header .container nav {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-    }
+    } */
 
     header .container .nav-mobile {
         display: block;
@@ -167,7 +167,7 @@ header .container nav .nav>li:hover {
     background-color: #d5262b;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     header .container nav .nav {
         display: none;
     }
@@ -177,8 +177,6 @@ header .container nav .nav>li:hover {
         flex-direction: column;
         position: relative;
         top: 0;
-        /* right: 50%;
-        transform: translatex(-50%); */
     }
 
     header .container nav .nav>li {
@@ -187,7 +185,7 @@ header .container nav .nav>li:hover {
         margin-right: 0;
     }
 
-}
+} */
 
 header .container nav .nav li:nth-child(2) {
     position: relative;
@@ -262,6 +260,33 @@ header .container nav .nav .links>li:hover>a {
     color: white;
 }
 
+@media (max-width: 991px) {
+    header .container nav {
+        position: relative;
+        z-index: 100;
+    }
+
+    header .container nav .nav {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 50px);
+        background-color: rgb(255 255 255 / 95%);
+        min-width: 300px;
+        display: none;
+        z-index: 200;
+    }
+
+    header .container:hover .nav {
+        display: block;
+        border-radius: 6px;
+    }
+
+    header .container .nav li {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+}
 
 /* End Header */
 /* Start Landing */
