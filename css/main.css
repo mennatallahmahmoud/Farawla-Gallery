@@ -1,0 +1,960 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(255 255 255 / 70%);
+    --secondary-color: #d5262b;
+}
+
+body {
+    font-family: 'Gelasio', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #bf2125;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+::selection {
+    background-color: #d5262b;
+    color: white;
+}
+
+.active {
+    background-color: #d5262b;
+}
+
+header .container nav .nav li .active-a {
+    color: white;
+}
+
+/* Small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Start Header */
+header {
+    background-color: var(--main-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 0 0 10px #DDD;
+    -moz-box-shadow: 0 0 10px #DDD;
+    box-shadow: -4px -9px 20px rgb(76 76 76);
+    width: 100%;
+    z-index: 1300;
+}
+
+header>.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+header>.container .logo img {
+    width: 120px;
+}
+
+header .container nav {
+    position: relative;
+}
+
+header>.container .nav-mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    header .container nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    header .container .nav-mobile {
+        display: block;
+        margin-left: 150px;
+        position: relative;
+    }
+
+    header .container .nav-mobile .bar {
+        transition: 0.2s;
+        font-size: 25px;
+    }
+
+    header .container .nav-mobile .cross {
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        opacity: 0;
+        transition: 0.2s;
+    }
+
+    header .container .nav-mobile:hover .bar {
+        opacity: 0;
+    }
+
+    header .container .nav-mobile:hover .cross {
+        opacity: 1;
+    }
+}
+
+header .container nav .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header .container nav .nav>li {
+    margin-right: 40px;
+    padding: 15px 25px;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+header .container nav .nav>li:hover {
+    background-color: #d5262b;
+}
+
+@media (max-width: 767px) {
+    header .container nav .nav {
+        display: none;
+    }
+
+    header .container .nav-mobile:hover+nav .nav {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        /* right: 50%;
+        transform: translatex(-50%); */
+    }
+
+    header .container nav .nav>li {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+}
+
+header .container nav .nav li:nth-child(2) {
+    position: relative;
+}
+
+header .container nav .nav li:nth-child(2) i {
+    font-size: 12px;
+}
+
+header .container nav .nav li a {
+    color: black;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+
+header .container nav .nav>li:hover>a {
+    color: white;
+}
+
+header .container nav .nav .links {
+    position: absolute;
+    bottom: -305px;
+    left: -2px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    z-index: -10;
+    opacity: 0;
+    -webkit-box-shadow: 0 0 10px #DDD;
+    -moz-box-shadow: 0 0 10px #DDD;
+    box-shadow: 0 0 10px #DDD;
+    transition: 0.3s;
+    border-radius: 6px;
+}
+
+header .container nav .nav li:nth-child(2):hover .links {
+    z-index: 10;
+    opacity: 1;
+    bottom: -302px;
+}
+
+header .container nav .nav .links>li {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    padding: 20px 35px;
+    transition: 0.3s;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+header .container nav .nav .links>li:hover {
+    background-color: #d5262b;
+}
+
+header .container nav .nav .links>li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+header .container nav .nav .links>li>a {
+    font-size: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+header .container nav .nav .links>li:hover>a {
+    color: white;
+}
+
+
+/* End Header */
+/* Start Landing */
+.landing {
+    background-image: url(../imgs/New\ Project.png);
+    min-height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.landing::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 20%);
+}
+
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 20px;
+    color: rgb(0 0 0 / 70%);
+}
+
+.landing .text h2 {
+    margin: 0 auto 20px;
+    font-size: 60px;
+}
+
+.landing .text p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.landing button {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 15px;
+}
+
+button {
+    background-color: #d5262b;
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+button a {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .landing .text h2 {
+        font-size: 40px;
+    }
+}
+
+/* End Landing */
+/* Start About Section */
+.about-sec {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-sec .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-sec .container .head {
+    font-size: 120px;
+    width: 350px;
+    opacity: 0.2;
+    color: #d5262b;
+    margin-right: 20px;
+}
+
+.about-sec .container .image {
+    width: 350px;
+    margin-right: 20px;
+}
+
+.about-sec .container .image img {
+    max-width: 100%;
+    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+}
+
+.about-sec .container .content {
+    width: 350px;
+}
+
+.about-sec .container .content h3 {
+    font-size: 30px;
+    color: rgb(0 0 0 / 70%);
+    margin-top: 0;
+}
+
+.about-sec .container .content p {
+    line-height: 1.8;
+    font-size: 14px;
+    width: 250px;
+    color: rgb(0 0 0 / 50%);
+}
+
+.about-sec .container .content button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px 0 0;
+}
+
+.about-sec .container .content button a {
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .about-sec .container {
+        flex-direction: column;
+    }
+
+    .about-sec .container .head {
+        font-size: 50px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-sec .container .image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .about-sec .container .content {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .about-sec .container .content p {
+        margin: auto;
+    }
+
+    .about-sec .container .content button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* End About Section */
+/* Start Products Section */
+.products-sec {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-top: 2px solid rgb(225 223 223 / 70%);
+}
+
+.top {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.top h2 {
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    color: rgb(0 0 0 / 70%);
+}
+
+.top h2::after,
+.top h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top h2::after {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;
+    bottom: -35px;
+    background-color: white;
+}
+
+.top h2::before {
+    width: 200px;
+    height: 1px;
+    background-color: rgb(0 0 0 / 70%);
+    bottom: -25px;
+}
+
+.top p {
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgb(0 0 0 / 50%);
+}
+
+.products-sec .container .box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.products-sec .container .box .prod-image {
+    width: 400px;
+    margin-right: 70px;
+}
+
+.products-sec .container .box .prod-image img {
+    max-width: 100%;
+    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+}
+
+.products-sec .container .box .info {
+    width: 350px;
+    text-align: center;
+}
+
+.products-sec .container .box .info h3 {
+    font-size: 35px;
+    color: rgb(0 0 0 / 70%);
+    margin: 0 auto 20px;
+}
+
+.products-sec .container .box .info span {
+    line-height: 1.8;
+    font-size: 14px;
+    width: 250px;
+    color: rgb(0 0 0 / 50%);
+    display: block;
+    margin: auto;
+}
+
+.products-sec .container .box .info button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.products-sec .container .box .info button a {
+    color: white;
+}
+
+.products-sec .container .medals,
+.products-sec .container .earrings {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 767px) {
+    .products-sec .container .box {
+        flex-direction: column;
+    }
+
+    .products-sec .container .box .prod-image {
+        margin-right: 0;
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+}
+
+/* End Products Section */
+/* Start Contacts Section */
+.contacts-sec {
+    margin-top: 100px;
+    background-color: rgb(225 225 223 / 50%);
+    position: relative;
+    display: flex;
+    padding: 0 0 30px 50px;
+}
+
+.contacts-sec .contacts-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contacts-sec h2 {
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: rgb(0 0 0 / 70%);
+}
+
+.contacts-sec p {
+    line-height: 1.8;
+    font-size: 14px;
+    color: rgb(0 0 0 / 50%);
+}
+
+.contacts-sec button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px 0 0;
+}
+
+.contacts-sec button a {
+    color: white;
+}
+
+.contacts-sec .contacts-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-sec .contacts-img img {
+    max-width: 50%;
+}
+
+@media (max-width: 991px) {
+    .contacts-sec {
+        flex-direction: column-reverse;
+        padding: 0 30px 40px;
+    }
+
+    .contacts-sec .contacts-content {
+        text-align: center;
+    }
+}
+
+/* End Contacts Section */
+/* Start Footer */
+footer {
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: -4px -2px 20px rgb(76 76 76 / 20%);
+}
+
+footer img {
+    width: 120px;
+}
+
+footer .info {
+    display: flex;
+    align-items: center;
+}
+
+footer .info .social-icons {
+    text-align: center;
+}
+
+footer .info .social-icons i {
+    background-color: rgb(213 38 43);
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 35px;
+    height: 35px;
+}
+
+footer .info span {
+    display: block;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: rgb(0 0 0 / 70%);
+    background-color: rgb(225 225 223 / 50%);
+    padding: 8px;
+    border-radius: 6px;
+}
+
+footer .info>i {
+    background-color: rgb(213 38 43);
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+}
+
+footer .footer-sec {
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-sec ul:not(:last-of-type) {
+    margin-right: 25px;
+}
+
+footer .footer-sec ul li {
+    margin-bottom: 5px;
+}
+
+footer .footer-sec ul li a {
+    color: rgb(0 0 0 / 70%);
+    transition: 0.3s;
+}
+
+footer .footer-sec ul li:hover a {
+    color: #d5262b;
+}
+
+footer .footer-sec ul li a i {
+    color: #d5262b;
+    margin-right: 8px;
+}
+
+@media (max-width: 991px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer img {
+        margin-bottom: 15px;
+    }
+
+    footer .info {
+        margin-bottom: 15px;
+    }
+}
+
+/* End Footer */
+/* Start About Page */
+.about-landing {
+    position: relative;
+    height: 100vh;
+    background-image: url(../imgs/about-landingtwo.png);
+    background-size: cover;
+}
+
+.about-landing::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 20%);
+}
+
+.about-landing h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 20px;
+    color: rgb(0 0 0 / 70%);
+    font-size: 60px;
+    margin: 0;
+}
+
+.about-content-page {
+    margin: 50px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-content-page h3 {
+    font-size: 40px;
+    width: 100%;
+    color: rgb(0 0 0 / 70%);
+    margin: 0;
+}
+
+.about-content-page p {
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 18px;
+    color: rgb(0 0 0 / 50%);
+    margin-left: 40px;
+}
+
+@media (max-width: 991px) {
+    .about-content-page {
+        flex-direction: column;
+        margin: 50px 10px;
+        padding: 20px 10px;
+    }
+
+    .about-content-page h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-content-page p {
+        font-size: 14px;
+        margin-left: 0;
+        text-align: center;
+        padding: 10px 25px;
+    }
+}
+
+/* End About Page */
+.products-landing {
+    position: relative;
+    background-image: url(../imgs/products-landing.png);
+    background-size: cover;
+    height: 100vh;
+}
+
+.products-landing::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 20%);
+}
+
+.products-landing .products-landing-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 20px;
+    color: rgb(0 0 0 / 70%);
+}
+
+.products-landing .products-landing-content h2 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.products-landing .products-landing-content p {
+    margin: 0;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .products-landing .products-landing-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* Start Necklaces Page */
+.necklaces-container,
+.medals-container,
+.bracelets-container,
+.earrings-container,
+.rings-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.necklaces-container .container,
+.medals-container .container,
+.bracelets-container .container,
+.earrings-container .container,
+.rings-container .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.necklaces-container .container .necklaces-box,
+.medals-container .container .medals-box,
+.bracelets-container .container .bracelets-box,
+.earrings-container .container .earrings-box,
+.rings-container .container .rings-box {
+    position: relative;
+    padding: 20px;
+}
+
+.necklaces-container .container .necklaces-box img,
+.medals-container .container .medals-box img,
+.bracelets-container .container .bracelets-box img,
+.earrings-container .container .earrings-box img,
+.rings-container .container .rings-box img {
+    max-width: 100%;
+    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+.necklaces-container .container .necklaces-box:hover img,
+.medals-container .container .medals-box:hover img,
+.bracelets-container .container .bracelets-box:hover img,
+.earrings-container .container .earrings-box:hover img,
+.rings-container .container .rings-box:hover img {
+    transform: scale(1);
+}
+
+.necklaces-container i,
+.medals-container i,
+.bracelets-container i,
+.earrings-container i,
+.rings-container i {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    color: var(--secondary-color);
+    font-size: 20px;
+    cursor: pointer;
+    animation: scaleing 1s infinite
+}
+
+@keyframes scaleing {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+.box-info {
+    text-align: center;
+    margin: 25px auto 0;
+}
+
+.prod-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.3s
+}
+
+
+.box-info span:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.box-info span:nth-of-type(3) {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+/* End Necklaces Page */
+/* Start Medals Page */
+.medals-landing {
+    background-image: url(../imgs/medals-landing.png);
+}
+
+/* End Medals Page */
+/* Start Bracelets Page */
+.bracelets-landing {
+    background-image: url(../imgs/bracelets-landing.png);
+}
+
+/* End Bracelets Page */
+/* Start Earrings Page */
+.earrings-landing {
+    background-image: url(../imgs/earrings-landing.png);
+}
+
+/* End Earrings Page */
+/* Start Rings Page */
+.rings-landing {
+    background-image: url(../imgs/rings-landing.png);
+}
+
+.prices span:nth-of-type(1),
+.prices span:nth-of-type(4) {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.prices span:nth-of-type(5) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.prices span:nth-of-type(6) {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+/* End Rings Page */
